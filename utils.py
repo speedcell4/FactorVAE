@@ -1,7 +1,7 @@
 """utils.py"""
 
-import os
 import argparse
+import os
 import subprocess
 
 
@@ -11,7 +11,7 @@ class DataGather(object):
         self.data = self.get_empty_data_dict()
 
     def get_empty_data_dict(self):
-        return {arg:[] for arg in self.keys}
+        return {arg: [] for arg in self.keys}
 
     def insert(self, **kwargs):
         for key in kwargs:
@@ -38,7 +38,7 @@ def grid2gif(image_str, output_gif, delay=100):
     code from:
         https://stackoverflow.com/questions/753190/programmatically-generate-video-or-animated-gif-in-python/34555939#34555939
     """
-    str1 = 'convert -delay '+str(delay)+' -loop 0 ' + image_str  + ' ' + output_gif
+    str1 = 'convert -delay ' + str(delay) + ' -loop 0 ' + image_str + ' ' + output_gif
     subprocess.call(str1, shell=True)
 
 

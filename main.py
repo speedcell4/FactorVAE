@@ -1,6 +1,7 @@
 """main.py"""
 
 import argparse
+
 import numpy as np
 import torch
 
@@ -32,11 +33,15 @@ if __name__ == "__main__":
     parser.add_argument('--z_dim', default=10, type=int, help='dimension of the representation z')
     parser.add_argument('--gamma', default=6.4, type=float, help='gamma hyperparameter')
     parser.add_argument('--lr_VAE', default=1e-4, type=float, help='learning rate of the VAE')
-    parser.add_argument('--beta1_VAE', default=0.9, type=float, help='beta1 parameter of the Adam optimizer for the VAE')
-    parser.add_argument('--beta2_VAE', default=0.999, type=float, help='beta2 parameter of the Adam optimizer for the VAE')
+    parser.add_argument('--beta1_VAE', default=0.9, type=float,
+                        help='beta1 parameter of the Adam optimizer for the VAE')
+    parser.add_argument('--beta2_VAE', default=0.999, type=float,
+                        help='beta2 parameter of the Adam optimizer for the VAE')
     parser.add_argument('--lr_D', default=1e-4, type=float, help='learning rate of the discriminator')
-    parser.add_argument('--beta1_D', default=0.5, type=float, help='beta1 parameter of the Adam optimizer for the discriminator')
-    parser.add_argument('--beta2_D', default=0.9, type=float, help='beta2 parameter of the Adam optimizer for the discriminator')
+    parser.add_argument('--beta1_D', default=0.5, type=float,
+                        help='beta1 parameter of the Adam optimizer for the discriminator')
+    parser.add_argument('--beta2_D', default=0.9, type=float,
+                        help='beta2 parameter of the Adam optimizer for the discriminator')
 
     parser.add_argument('--dset_dir', default='data', type=str, help='dataset directory')
     parser.add_argument('--dataset', default='CelebA', type=str, help='dataset name')

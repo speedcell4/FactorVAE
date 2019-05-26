@@ -39,6 +39,7 @@ class Discriminator(nn.Module):
 
 class FactorVAE1(nn.Module):
     """Encoder and Decoder architecture for 2D Shapes data."""
+
     def __init__(self, z_dim=10):
         super(FactorVAE1, self).__init__()
         self.z_dim = z_dim
@@ -53,7 +54,7 @@ class FactorVAE1(nn.Module):
             nn.ReLU(True),
             nn.Conv2d(64, 128, 4, 1),
             nn.ReLU(True),
-            nn.Conv2d(128, 2*z_dim, 1)
+            nn.Conv2d(128, 2 * z_dim, 1)
         )
         self.decode = nn.Sequential(
             nn.Conv2d(z_dim, 128, 1),
@@ -100,6 +101,7 @@ class FactorVAE1(nn.Module):
 
 class FactorVAE2(nn.Module):
     """Encoder and Decoder architecture for 3D Shapes, Celeba, Chairs data."""
+
     def __init__(self, z_dim=10):
         super(FactorVAE2, self).__init__()
         self.z_dim = z_dim
@@ -114,7 +116,7 @@ class FactorVAE2(nn.Module):
             nn.ReLU(True),
             nn.Conv2d(64, 256, 4, 1),
             nn.ReLU(True),
-            nn.Conv2d(256, 2*z_dim, 1)
+            nn.Conv2d(256, 2 * z_dim, 1)
         )
         self.decode = nn.Sequential(
             nn.Conv2d(z_dim, 256, 1),
@@ -161,6 +163,7 @@ class FactorVAE2(nn.Module):
 
 class FactorVAE3(nn.Module):
     """Encoder and Decoder architecture for 3D Faces data."""
+
     def __init__(self, z_dim=10):
         super(FactorVAE3, self).__init__()
         self.z_dim = z_dim
@@ -175,7 +178,7 @@ class FactorVAE3(nn.Module):
             nn.ReLU(True),
             nn.Conv2d(64, 256, 4, 1),
             nn.ReLU(True),
-            nn.Conv2d(256, 2*z_dim, 1)
+            nn.Conv2d(256, 2 * z_dim, 1)
         )
         self.decode = nn.Sequential(
             nn.Conv2d(z_dim, 256, 1),
